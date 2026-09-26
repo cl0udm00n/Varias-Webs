@@ -306,6 +306,22 @@ button,input,select,textarea{font:inherit;color:inherit}
 .rev-stars{margin-bottom:10px;font-size:16px;letter-spacing:2px;color:#e39a2f}
 .rev-stars .off{color:rgba(34,28,21,.16)}
 .rev-card blockquote{margin:0;font-size:15.5px;line-height:1.62}
+.rev-who .lg{font-style:normal;font-weight:600;color:var(--amber-deep)}
+.rev-more{display:inline-block;margin-top:10px;font-size:13.5px;font-weight:600;color:var(--amber-deep);text-decoration:none;border-bottom:1px solid rgba(165,86,26,.35)}
+.rev-more:hover{border-bottom-color:currentColor}
+.rev-reply{margin-top:14px;padding:12px 14px;border-radius:12px;background:rgba(242,160,61,.1);border-left:3px solid var(--amber)}
+.rev-reply span{display:block;margin-bottom:4px;font:500 10.5px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--amber-deep)}
+.rev-reply p{margin:0;font-size:14.5px;line-height:1.5}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0;padding:0;list-style:none}
+.badges li{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(34,28,21,.14);background:rgba(255,253,248,.7);font-size:14px;font-weight:600}
+.badges li::before{content:"";width:16px;height:16px;flex:none;border-radius:50%;background:var(--amber) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1107' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center/11px no-repeat}
+.pull{margin:clamp(56px,8vw,96px) auto 0;max-width:980px;text-align:center}
+.pull blockquote{position:relative;margin:0;font:italic 400 clamp(1.7rem,3.4vw,2.7rem)/1.22 var(--serif);font-variation-settings:"SOFT" 70;letter-spacing:-.015em;text-wrap:balance}
+.pull blockquote::before{content:"“";display:block;height:.5em;margin-bottom:.15em;font-size:2.4em;line-height:1;color:var(--amber)}
+.pull blockquote em{color:var(--amber-deep)}
+.pull figcaption{margin-top:18px;font-size:14.5px;color:var(--text-soft)}
+.stars-mini{color:#e39a2f;letter-spacing:2px;margin-right:6px}
+.addr span.addr-access{display:block;margin-top:4px;font-size:13.5px;color:var(--amber-2)}
 .rev-card.pending{background:repeating-linear-gradient(-45deg,rgba(34,28,21,.022) 0 10px,transparent 10px 20px),var(--card);border:1.5px dashed rgba(165,86,26,.38);box-shadow:none}
 .rev-card.pending:nth-child(even){transform:translateY(34px)}
 .sk{display:block;height:10px;border-radius:6px;background:linear-gradient(90deg,rgba(34,28,21,.07) 20%,rgba(34,28,21,.14) 50%,rgba(34,28,21,.07) 80%);background-size:250% 100%;animation:shimmer 1.8s linear infinite}
@@ -812,7 +828,8 @@ button,input,select,textarea{font:inherit;color:inherit}
     <div>
       <p class="eyebrow reveal">Tu taller de confianza</p>
       <h2 class="h2 reveal" style="--d:1">Más de 30 años cuidando los coches <span class="hand">de los vecinos<svg class="hand-line" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 11C60 5 150 3 297 8"/></svg></span> de Churriana.</h2>
-      <p class="lead reveal" style="--d:2">Un taller de los de siempre, con el equipamiento de hoy. Desde 1991 trabajamos con tres principios muy claros: sinceridad, trato personal y responsabilidad. Te decimos lo que de verdad necesita tu coche y lo arreglamos con garantía, a un precio justo.</p>
+      <p class="lead reveal" style="--d:2">Un negocio familiar de los de siempre, con el equipamiento de hoy. Desde 1991 trabajamos con tres principios muy claros: sinceridad, trato personal y responsabilidad. Te decimos lo que de verdad necesita tu coche y lo arreglamos con garantía, a un precio justo.</p>
+      <ul class="badges reveal" style="--d:3"><li>Taller de la red InterTaller</li><li>Centro FlexFuel de descarbonización</li></ul>
     </div>
     <div class="stats">
       <div class="stat reveal" style="--d:1"><span class="stat-num"><span data-count="30" data-prefix="+">+30</span></span><span class="stat-lbl">años de oficio en Churriana</span></div>
@@ -820,6 +837,10 @@ button,input,select,textarea{font:inherit;color:inherit}
       <div class="stat reveal" style="--d:3"><span class="stat-num"><span data-count="70" data-prefix="+">+70</span></span><span class="stat-lbl">opiniones de clientes</span></div>
     </div>
   </div>
+  <figure class="wrap pull reveal">
+    <blockquote>Sobre todo honradez, sabes que lo que te dicen <em>es lo que es</em>.</blockquote>
+    <figcaption><span class="stars-mini" aria-label="5 de 5 estrellas">★★★★★</span> Francisco RM · reseña en Google</figcaption>
+  </figure>
   <div class="wrap values">
     <article class="value reveal" style="--d:0">
       <div class="value-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.2 7.5L3 20.5l1.6-5A8.4 8.4 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12.5 11.5h.01M16.5 11.5h.01" stroke-width="2.6"/></svg></div>
@@ -829,7 +850,7 @@ button,input,select,textarea{font:inherit;color:inherit}
     <article class="value reveal" style="--d:1">
       <div class="value-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.7c0 5.8-7.5 10.4-7.5 10.4z"/></svg></div>
       <h3>Trato personal</h3>
-      <p>Trato directo y cercano, como se ha hecho siempre. Aquí nos conocemos todos.</p>
+      <p>Un negocio familiar con trato directo y cercano, como se ha hecho siempre. Aquí nos conocemos todos.</p>
     </article>
     <article class="value reveal" style="--d:2">
       <div class="value-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.8-3.3 8.3-7.5 9.9-4.2-1.6-7.5-5.1-7.5-9.9V6z"/><path d="m8.8 12.2 2.2 2.2 4.3-4.4"/></svg></div>
@@ -920,7 +941,7 @@ button,input,select,textarea{font:inherit;color:inherit}
         <li>Desinfección con ozono</li>
         <li>Homologaciones de industria</li>
         <li>Tapicería</li>
-        <li>Venta de vehículos</li>
+        <li>Venta de coches revisados y con garantía</li>
       </ul>
     </div>
   </div>
@@ -947,7 +968,7 @@ button,input,select,textarea{font:inherit;color:inherit}
       </div>
       <ol class="steps">
         <li class="step reveal" style="--d:0"><span class="step-dot">01</span><h3>Pides cita</h3><p>Llámanos o déjanos tus datos aquí. Si no puedes acercarte, recogemos el coche.</p></li>
-        <li class="step reveal" style="--d:1"><span class="step-dot">02</span><h3>Diagnóstico claro</h3><p>Lo revisamos con equipos de diagnosis y te contamos qué tiene, sin rodeos.</p></li>
+        <li class="step reveal" style="--d:1"><span class="step-dot">02</span><h3>Diagnóstico claro</h3><p>Lo revisamos con equipos de diagnosis y te explicamos qué le pasa, para que lo entiendas.</p></li>
         <li class="step reveal" style="--d:2"><span class="step-dot">03</span><h3>Presupuesto y reparación</h3><p>Te damos presupuesto y, con tu visto bueno, nos ponemos manos a la obra.</p></li>
         <li class="step reveal" style="--d:3"><span class="step-dot">04</span><h3>Listo para rodar</h3><p>Te lo devolvemos a punto y con garantía en el arreglo.</p></li>
       </ol>
@@ -972,10 +993,11 @@ button,input,select,textarea{font:inherit;color:inherit}
         <p class="rev-meta">Valoración media en Google<br><strong>Más de 70 opiniones</strong> de clientes</p>
         <p class="rev-themes-lbl">Lo que más se repite</p>
         <ul class="chips">
-          <li>Profesionalidad</li>
-          <li>Rapidez en las reparaciones</li>
-          <li>Atención al detalle</li>
-          <li>Honestidad en el diagnóstico</li>
+          <li>Honradez</li>
+          <li>Trato amable y cercano</li>
+          <li>Rápidos y resolutivos</li>
+          <li>Te explican la avería</li>
+          <li>Negocio familiar</li>
         </ul>
         <a class="link-arrow" href="https://www.google.com/maps/place/TALLERES+JES%C3%9AS+MART%C3%8DN/@37.1489712,-3.6398435,16z/data=!4m10!1m2!2m1!1stalleres!3m6!1s0xd71fb8e2f78aadd:0x68e1095634d74c30!8m2!3d37.1457467!4d-3.6344155!15sCgh0YWxsZXJlc1oKIgh0YWxsZXJlc5IBEGF1dG9fcmVwYWlyX3Nob3CaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUXRlR0pJYUdkblJSQULgAQD6AQQIJxA9!16s%2Fg%2F11xxksk25" target="_blank" rel="noopener">Ver todas las opiniones en Google
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
@@ -1025,7 +1047,7 @@ button,input,select,textarea{font:inherit;color:inherit}
         <div class="map-info">
           <div class="addr">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6.5-8 12-8 12s-8-5.5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div><strong>C/ Rubén Darío, s/n · Pol. Ind. San Cayetano</strong><span>18194 Churriana de la Vega (Granada)</span></div>
+            <div><strong>C/ Rubén Darío, s/n · Pol. Ind. San Cayetano</strong><span>18194 Churriana de la Vega (Granada)</span><span class="addr-access">Acceso por la A-44, salida 138 (Ogíjares), vía de servicio</span></div>
           </div>
           <div class="map-btns">
             <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=37.1457467,-3.6344155" target="_blank" rel="noopener">Cómo llegar
@@ -1143,10 +1165,25 @@ button,input,select,textarea{font:inherit;color:inherit}
     5: [['09:00', '14:00'], ['16:00', '19:00']], 6: []
   };
 
-  /* Reseñas REALES de Google (copiar tal cual de la ficha).
-     Formato: { autor: 'Nombre', estrellas: 5, fecha: 'hace 2 meses', texto: '…' }
-     Mientras la lista esté vacía, la sección muestra huecos marcados como pendientes. */
-  const RESENAS = [];
+  /* Reseñas REALES de Google, copiadas literalmente de la ficha (solo se han normalizado espacios tras comas y puntos).
+     recortada: true → Google muestra "Más"; se enseña el texto visible y se enlaza a la ficha.
+     Formato: { autor, guia (Local Guide), estrellas, fecha, texto, recortada, respuesta } */
+  const FICHA_GOOGLE = 'https://www.google.com/maps/place/TALLERES+JES%C3%9AS+MART%C3%8DN/@37.1489712,-3.6398435,16z/data=!4m10!1m2!2m1!1stalleres!3m6!1s0xd71fb8e2f78aadd:0x68e1095634d74c30!8m2!3d37.1457467!4d-3.6344155!15sCgh0YWxsZXJlc1oKIgh0YWxsZXJlc5IBEGF1dG9fcmVwYWlyX3Nob3CaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUXRlR0pJYUdkblJSQULgAQD6AQQIJxA9!16s%2Fg%2F11xxksk25';
+  const RESENAS = [
+    { autor: 'Francisco RM', guia: true, estrellas: 5, fecha: 'hace 4 años', recortada: true,
+      texto: 'Tanto Jesús como su mujer son unos pedazo de profesionales. Sobre todo honradez, sabes que lo que te dicen es lo que es. En casa tenemos 3 coches (Volkswagen, Peugeot y Ford), y siempre que podemos (Vivimos retirados) los dejamos en manos…' },
+    { autor: 'Javier F. G.', estrellas: 5, fecha: 'hace 4 años', recortada: true,
+      texto: 'Un taller familiar con un trato muy amable y cercano. Y sobre todo rápido y resolutivo. Lo mejor, de todo la preocupación de Jesús para que comprendas el problema que ha tenido tu vehículo. Y enseñarte.',
+      respuesta: 'Gracias, Javier. Es un placer tratar con clientes como tú. Un saludo' },
+    { autor: 'Javier A. M.', guia: true, estrellas: 5, fecha: 'hace 6 años',
+      texto: 'Calidad y honradez, lo que más valoro en un taller lo tienen. Suelen ser rápidos en las reparaciones. El precio está un poco por encima de la media, pero siempre tienen algún detalle para rebajarlo un poco. Es mi taller habitual.' },
+    { autor: 'Conchi L. B.', guia: true, estrellas: 5, fecha: 'hace 2 años', recortada: true,
+      texto: 'Magníficos profesionales, trato muy amable y cercano, el servicio excelente. Negocio familiar que han sabido evolucionar con el tiempo y con las últimas tecnologías.' },
+    { autor: 'Sergio P. B.', guia: true, estrellas: 5, fecha: 'hace 6 años', recortada: true,
+      texto: 'Profesional a gran precio. Lo llevé para una avería y al meterlo al taller me dijo un ruido en una rueda. Muy recomendable, gran equipo, rápido y trabajadores. Lo llevo allí siempre que puedo desde la costa tropical. Muchas gracias.' },
+    { autor: 'Fan Burton', estrellas: 5, fecha: 'hace 2 años', recortada: true,
+      texto: 'BUEN TALLER así con mayúsculas. Estábamos de paso y preguntando por la zona me lo recomendaron. Jefe amable, llegue sin cita y me soluciono la avería al tocar los bajos en un…' }
+  ];
 
   /* ====================================================== */
   const $ = (s, c = document) => c.querySelector(s);
@@ -1338,10 +1375,12 @@ button,input,select,textarea{font:inherit;color:inherit}
     const hue = 16 + [...(r.autor || '')].reduce((a, ch) => a + ch.charCodeAt(0), 0) % 30;
     return `<figure class="rev-card">
       <div class="rev-head"><span class="avatar" style="--h:${hue}">${esc((r.autor || '·').trim().charAt(0).toUpperCase())}</span>
-        <div class="rev-who"><strong>${esc(r.autor || 'Cliente de Google')}</strong><span>${esc(r.fecha || '')}</span></div>
+        <div class="rev-who"><strong>${esc(r.autor || 'Cliente de Google')}</strong><span>${r.guia ? '<em class="lg">Local Guide</em> · ' : ''}${esc(r.fecha || '')}</span></div>
         <span class="rev-src">Google</span></div>
       <div class="rev-stars" role="img" aria-label="${n} de 5 estrellas">${'★'.repeat(n)}<span class="off">${'★'.repeat(5 - n)}</span></div>
-      <blockquote>${esc(r.texto || '')}</blockquote></figure>`;
+      <blockquote>${esc(r.texto || '')}</blockquote>
+      ${r.recortada ? `<a class="rev-more" href="${FICHA_GOOGLE}" target="_blank" rel="noopener">Leer completa en Google</a>` : ''}
+      ${r.respuesta ? `<div class="rev-reply"><span>Respuesta del propietario</span><p>${esc(r.respuesta)}</p></div>` : ''}</figure>`;
   }
   const pendingCard = () => `<figure class="rev-card pending" aria-label="Hueco reservado para una reseña real de Google">
       <div class="rev-head"><span class="avatar sk"></span><div class="rev-who"><span class="sk" style="width:120px"></span><span class="sk" style="width:74px"></span></div><span class="rev-src">Google</span></div>
@@ -1357,7 +1396,7 @@ button,input,select,textarea{font:inherit;color:inherit}
     revBox.classList.add('marquee');
     revBox.innerHTML = cols.map((list, i) => {
       const html = list.map(reviewCard).join('');
-      return `<div class="rev-col${i ? ' down' : ''}" style="--dur:${Math.max(30, list.length * 9)}s">${html}${html.replace(/<figure class="rev-card"/g, '<figure class="rev-card" aria-hidden="true"')}</div>`;
+      return `<div class="rev-col${i ? ' down' : ''}" style="--dur:${Math.max(44, list.length * 14)}s">${html}${html.replace(/<figure class="rev-card"/g, '<figure class="rev-card" aria-hidden="true"')}</div>`;
     }).join('');
   }
   renderReviews();
