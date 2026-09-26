@@ -44,4 +44,4 @@ Lo que se repite en ellas: honradez, trato amable y cercano, negocio familiar (J
 1. Confirmar la cifra actual de opiniones y la valoración media de la ficha, y si se quieren nombres completos en las reseñas.
 2. Logo del taller (ahora hay un monograma "JM" provisional) y, si se quiere, fotos reales del taller.
 3. ¿El desguace de la misma dirección es suyo? Se podría añadir "recambios de desguace" y "bajas de vehículos".
-4. Cómo se gestionarán las citas en la versión final (llamada, WhatsApp, formulario por correo…). El formulario actual es de demostración y no envía datos.
+4. Las citas se piden por teléfono (sección "Pide tu cita": llamar, copiar número, rutas en Google Maps / Waze / Apple Maps y códigos QR para el móvil). Si el taller quiere recibirlas también por WhatsApp o email, habría que añadirlo con su número o correo.

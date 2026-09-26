@@ -368,40 +368,54 @@ button,input,select,textarea{font:inherit;color:inherit}
 .addr span{color:var(--on-dark-soft)}
 .map-btns{display:flex;gap:8px;flex-wrap:wrap}
 
-/* ---------- cita ---------- */
+/* ---------- cita: llamar y cómo llegar ---------- */
 .cita{background:radial-gradient(60% 55% at 90% 0,rgba(242,160,61,.16),transparent 65%),radial-gradient(50% 60% at 0 100%,rgba(242,160,61,.07),transparent 70%),var(--ink);color:var(--on-dark)}
-.cita-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(36px,6vw,84px);align-items:start}
-.cita-copy .lead{color:var(--on-dark-soft)}
-.call-card{display:flex;align-items:center;gap:18px;margin:32px 0 26px;padding:18px 22px;border-radius:20px;background:rgba(244,237,225,.04);border:1px solid var(--ink-line);text-decoration:none;transition:border-color .3s,background-color .3s,transform .5s var(--ease-out)}
-.call-card:hover{transform:translateY(-3px);border-color:rgba(242,160,61,.55);background:rgba(242,160,61,.07)}
-.call-ico{position:relative;width:56px;height:56px;flex:none;display:grid;place-items:center;border-radius:16px;background:var(--amber);color:#1a1107}
-.call-ico svg{width:24px;height:24px}
-.call-card:hover .call-ico svg{animation:ring .9s ease-in-out}
-.call-ico::after{content:"";position:absolute;inset:-6px;border-radius:20px;border:1px solid rgba(242,160,61,.6);animation:halo 2.4s ease-out infinite}
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
+.c-card{position:relative;display:flex;flex-direction:column;overflow:hidden;padding:clamp(26px,3.4vw,42px);border-radius:28px;background:linear-gradient(180deg,rgba(244,237,225,.065),rgba(244,237,225,.02));border:1px solid var(--ink-line);transition:border-color .4s,transform .6s var(--ease-out),box-shadow .6s}
+.c-card:hover{border-color:rgba(242,160,61,.45);transform:translateY(-4px);box-shadow:0 40px 80px -50px rgba(0,0,0,.9)}
+.c-card::before{content:"";position:absolute;right:-25%;top:-40%;width:75%;height:85%;background:radial-gradient(closest-side,rgba(242,160,61,.18),transparent);pointer-events:none}
+.c-card>*{position:relative}
+.c-top{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.c-ico{position:relative;width:56px;height:56px;flex:none;display:grid;place-items:center;border-radius:16px;background:var(--amber);color:#1a1107}
+.c-ico svg{width:24px;height:24px}
+.c-call .c-ico::after{content:"";position:absolute;inset:-6px;border-radius:20px;border:1px solid rgba(242,160,61,.6);animation:halo 2.4s ease-out infinite}
+.c-call:hover .c-ico svg{animation:ring .9s ease-in-out}
+.c-route .c-ico{background:rgba(242,160,61,.14);color:var(--amber-2);box-shadow:inset 0 0 0 1px rgba(242,160,61,.45)}
+.c-route:hover .c-ico svg{animation:bob .9s var(--ease-out)}
 @keyframes halo{0%{opacity:.9;transform:scale(.9)}80%,100%{opacity:0;transform:scale(1.18)}}
 @keyframes ring{0%,100%{transform:rotate(0)}15%{transform:rotate(-14deg)}30%{transform:rotate(12deg)}45%{transform:rotate(-10deg)}60%{transform:rotate(6deg)}75%{transform:rotate(-3deg)}}
-.call-lbl{display:block;font:500 11px/1.4 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-soft)}
-.call-num{display:block;font:520 clamp(26px,3vw,32px)/1.15 var(--serif);font-variation-settings:"SOFT" 50;letter-spacing:-.01em;color:var(--on-dark)}
-.cita-points{display:grid;gap:12px;margin:0;padding:0;list-style:none;color:var(--on-dark-soft)}
-.cita-points li{display:flex;gap:12px;align-items:flex-start}
-.cita-points svg{width:20px;height:20px;flex:none;margin-top:3px;color:var(--amber-2)}
-.cita-form{position:relative;padding:clamp(24px,3.6vw,40px);border-radius:28px;background:var(--cream);color:var(--text);box-shadow:0 50px 90px -50px rgba(0,0,0,.8)}
-.form-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
-.form-head h3{margin:0;font:560 26px/1.2 var(--serif);font-variation-settings:"SOFT" 60}
-.form-head span{font:500 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--amber-deep)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field{position:relative}
-.field.full{grid-column:1/-1}
-.field input,.field select,.field textarea{display:block;width:100%;height:58px;padding:24px 16px 8px;border-radius:14px;border:1px solid rgba(34,28,21,.16);background:var(--card);font-size:16px;line-height:1.3;-webkit-appearance:none;appearance:none;transition:border-color .25s,box-shadow .25s}
-.field textarea{height:108px;padding-top:28px;resize:vertical}
-.field select{padding-right:42px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a5561a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px}
-.field label{position:absolute;left:17px;top:18px;font-size:15.5px;color:var(--text-soft);pointer-events:none;transition:top .2s var(--ease-out),font-size .2s var(--ease-out),color .2s}
-.field input:focus+label,.field input:not(:placeholder-shown)+label,.field textarea:focus+label,.field textarea:not(:placeholder-shown)+label,.field select+label,.field input[type=date]+label{top:8px;font-size:11.5px;letter-spacing:.03em;color:var(--amber-deep)}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 4px rgba(242,160,61,.2)}
-.check{display:flex;align-items:center;gap:10px;grid-column:1/-1;padding:4px 2px;font-size:15px;cursor:pointer}
-.check input{width:19px;height:19px;accent-color:var(--amber-deep);cursor:pointer}
-.form-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:18px}
-.form-note{margin:0;max-width:30ch;font-size:13px;line-height:1.45;color:var(--text-soft)}
+@keyframes bob{0%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}70%{transform:translateY(1px)}}
+.c-lbl{margin:0 0 7px;font:500 11.5px/1.2 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--amber-2)}
+.c-sub{margin:0;font-size:14.5px;color:var(--on-dark-soft)}
+.c-status{align-self:flex-start;margin:-8px 0 18px}
+.nw{white-space:nowrap}
+.status.dark{background:rgba(143,224,168,.12);color:#8fe0a8}
+.status.dark.closed{background:rgba(242,163,143,.12);color:#f2a38f}
+.c-big{align-self:flex-start;font:500 clamp(2.6rem,5.2vw,4.2rem)/1 var(--serif);font-variation-settings:"SOFT" 50;letter-spacing:-.025em;color:var(--on-dark);text-decoration:none;font-variant-numeric:tabular-nums;white-space:nowrap;transition:color .3s}
+.c-big:hover{color:var(--amber-2)}
+.c-note{margin:14px 0 0;font-size:15px;color:var(--on-dark-soft)}
+.c-note b{color:var(--on-dark);font-weight:600}
+.c-addr{margin:0;font:500 clamp(1.55rem,2.5vw,2rem)/1.18 var(--serif);font-style:normal;font-variation-settings:"SOFT" 60;letter-spacing:-.012em;color:var(--on-dark)}
+.c-addr span{display:block;margin-top:8px;font:400 16px/1.45 var(--sans);letter-spacing:0;color:var(--on-dark-soft)}
+.c-access{display:flex;align-items:center;gap:10px;margin:18px 0 0;padding:11px 14px;border-radius:12px;background:rgba(242,160,61,.09);border:1px dashed rgba(242,160,61,.38);font-size:14.5px;line-height:1.4;color:var(--on-dark)}
+.c-access svg{width:19px;height:19px;flex:none;color:var(--amber-2)}
+.c-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.c-with{margin:28px 0 12px;font:500 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-soft)}
+.c-apps{display:flex;flex-wrap:wrap;gap:10px}
+.c-apps .btn{--h:48px;padding:0 20px;font-size:15px}
+.c-copy{margin-top:14px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:6px 2px;border:0;background:none;cursor:pointer;font-size:14.5px;font-weight:600;color:var(--on-dark-soft);transition:color .25s}
+.c-copy:hover{color:var(--amber-2)}
+.c-copy svg,.btn-copy svg{width:17px;height:17px}
+.c-qr{display:none;margin-top:auto}
+.c-qr-in{display:flex;align-items:center;gap:18px;margin-top:30px;padding-top:24px;border-top:1px solid var(--ink-line)}
+.qr{width:96px;height:96px;flex:none;padding:8px;border-radius:14px;background:var(--cream);box-shadow:0 0 0 4px rgba(242,160,61,.18)}
+.qr svg{width:100%;height:100%}
+.c-qr p{margin:0;font-size:14px;line-height:1.5;color:var(--on-dark-soft)}
+.c-qr strong{display:block;margin-bottom:2px;color:var(--on-dark);font-weight:600}
+@media (hover:hover) and (pointer:fine) and (min-width:900px){.c-qr{display:block}}
+.cita-points{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 36px;margin:36px 0 0;padding:26px 0 0;list-style:none;border-top:1px solid var(--ink-line);color:var(--on-dark-soft)}
+.cita-points li{display:flex;gap:10px;align-items:center}
+.cita-points svg{width:20px;height:20px;flex:none;color:var(--amber-2)}
 
 /* ---------- footer ---------- */
 .footer{position:relative;padding:72px 0 110px;background:#0f0d0a;color:var(--on-dark-soft);font-size:15px}
@@ -429,7 +443,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* ---------- responsive ---------- */
 @media (max-width:1020px){
   .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .about-grid,.rev-grid,.visit-grid,.cita-grid{grid-template-columns:minmax(0,1fr)}
+  .about-grid,.rev-grid,.visit-grid,.contact-grid{grid-template-columns:minmax(0,1fr)}
   .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
   .stat{flex-direction:column;align-items:flex-start;border-bottom:1px solid rgba(34,28,21,.14)}
   .stat-lbl{text-align:left}
@@ -452,7 +466,8 @@ button,input,select,textarea{font:inherit;color:inherit}
   .stat-lbl{text-align:right}
   .rev-cards{grid-template-columns:minmax(0,1fr)}
   .rev-card.pending:nth-child(even){transform:none}
-  .form-grid{grid-template-columns:minmax(0,1fr)}
+  .c-actions .btn,.c-apps .btn{flex:1 1 auto}
+  .cita-points{flex-direction:column;align-items:flex-start;gap:12px}
   .foot-grid{grid-template-columns:minmax(0,1fr)}
   .map-info .btn{flex:1}
   .map-btns{width:100%}
@@ -462,7 +477,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .band-track,.rev-col,.bubbles i,.sk,.scroll-cue i::after,.call-ico::after,.status i{animation:none!important}
+  .band-track,.rev-col,.bubbles i,.sk,.scroll-cue i::after,.c-call .c-ico::after,.status i{animation:none!important}
   .js .reveal{transform:none;filter:none;transition:opacity .4s ease}
 }
 </style>
@@ -1061,53 +1076,60 @@ button,input,select,textarea{font:inherit;color:inherit}
   </div>
 </section>
 
-<!-- ============ CITA ============ -->
+<!-- ============ CITA: LLAMAR Y CÓMO LLEGAR ============ -->
 <section class="sec sec-dark cita grain" id="cita">
-  <div class="wrap cita-grid">
-    <div class="cita-copy">
+  <div class="wrap">
+    <header class="sec-head">
       <p class="eyebrow reveal">Pide tu cita</p>
-      <h2 class="h2 reveal" style="--d:1">¿Le pasa algo al coche? <em>Cuéntanoslo.</em></h2>
-      <p class="lead reveal" style="--d:2">Déjanos tus datos y te llamamos para darte día. Si lo prefieres, llámanos directamente en horario de taller.</p>
-      <a class="call-card reveal" style="--d:3" href="tel:+34958552814">
-        <span class="call-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-        <span><span class="call-lbl">Llámanos</span><span class="call-num">958 55 28 14</span></span>
-      </a>
-      <ul class="cita-points reveal" style="--d:4">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Recogida del vehículo si lo necesitas</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Presupuesto de la reparación</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Garantía en cada arreglo</li>
-      </ul>
+      <h2 class="h2 reveal" style="--d:1">¿Le pasa algo al coche? <em>Llámanos o acércate.</em></h2>
+      <p class="sec-sub reveal" style="--d:2">Te atendemos por teléfono en horario de taller y te damos cita. Y si no puedes acercarte, recogemos el coche.</p>
+    </header>
+
+    <div class="contact-grid">
+      <article class="c-card c-call reveal">
+        <div class="c-top">
+          <span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><p class="c-lbl">Llámanos</p><p class="c-sub">Te atendemos en horario de taller</p></div>
+        </div>
+        <span class="status dark c-status" id="callStatus" hidden><i></i><span></span></span>
+        <a class="c-big" href="tel:+34958552814" aria-label="Llamar al 958 55 28 14">958 55 28 14</a>
+        <p class="c-note"><b>Lunes a viernes</b> · <span class="nw">9:00 – 14:00</span> y <span class="nw">16:00 – 19:00</span></p>
+        <div class="c-actions">
+          <a class="btn btn-primary" href="tel:+34958552814"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Llamar ahora</a>
+          <button class="btn btn-ghost btn-copy" type="button" data-copy="958 55 28 14" data-ok="Número copiado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar número</button>
+        </div>
+        <div class="c-qr"><div class="c-qr-in">
+          <div class="qr"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" shape-rendering="crispEdges"><path stroke="#14110d" d="M0 0.5h7m2 0h1m1 0h2m1 0h7M0 1.5h1m5 0h1m2 0h1m1 0h2m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h3m3 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m2 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h1m3 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h5M0 8.5h1m1 0h5m3 0h1m1 0h1m1 0h5M4 9.5h1m4 0h1m2 0h3m2 0h2m1 0h1M1 10.5h1m4 0h1m3 0h2m1 0h1m3 0h3M1 11.5h1m2 0h1m2 0h1m6 0h1m2 0h2M0 12.5h2m1 0h1m1 0h4m1 0h2m1 0h1m2 0h1m2 0h1M8 13.5h1m3 0h1m2 0h3m1 0h2M0 14.5h7m3 0h1m1 0h1m1 0h2m2 0h2M0 15.5h1m5 0h1m1 0h2m2 0h2m1 0h1m2 0h2M0 16.5h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1M0 17.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1M0 18.5h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1M0 19.5h1m5 0h1m3 0h3m3 0h1m1 0h1M0 20.5h7m1 0h1m1 0h1m1 0h1m2 0h2m2 0h1"/></svg></div>
+          <p><strong>¿Lo estás viendo en el ordenador?</strong>Escanea el código con el móvil y llama directamente.</p>
+        </div></div>
+      </article>
+
+      <article class="c-card c-route reveal" style="--d:1">
+        <div class="c-top">
+          <span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6.5-8 12-8 12s-8-5.5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><p class="c-lbl">Cómo llegar</p><p class="c-sub">Pol. Ind. San Cayetano · Churriana de la Vega</p></div>
+        </div>
+        <address class="c-addr">C/ Rubén Darío, s/n<span>Pol. Ind. San Cayetano · 18194 Churriana de la Vega (Granada)</span></address>
+        <p class="c-access"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21 9 3M19 21 15 3M12 4.5v2M12 10.5v3M12 17.5v3"/></svg>Por la A-44, salida 138 (Ogíjares), vía de servicio</p>
+        <p class="c-with">Abre la ruta con</p>
+        <div class="c-apps">
+          <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=37.1457467,-3.6344155" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6.5-8 12-8 12s-8-5.5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Google Maps</a>
+          <a class="btn btn-ghost" href="https://waze.com/ul?ll=37.1457467,-3.6344155&amp;navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8z"/></svg>Waze</a>
+          <a class="btn btn-ghost" href="https://maps.apple.com/?daddr=37.1457467,-3.6344155&amp;dirflg=d" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4z"/><path d="M8 2v16M16 6v16"/></svg>Apple Maps</a>
+        </div>
+        <button class="c-copy" type="button" data-copy="C/ Rubén Darío, s/n, Pol. Ind. San Cayetano, 18194 Churriana de la Vega (Granada)" data-ok="Dirección copiada"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar dirección</button>
+        <div class="c-qr"><div class="c-qr-in">
+          <div class="qr"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges"><path stroke="#14110d" d="M0 0.5h7m1 0h1m1 0h1m1 0h1m1 0h2m2 0h2m2 0h1m1 0h2m4 0h7M0 1.5h1m5 0h1m3 0h2m3 0h1m2 0h1m1 0h1m2 0h2m2 0h1m2 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h1m2 0h4m1 0h5m2 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h4m2 0h3m1 0h2m5 0h2m1 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h2m2 0h1m1 0h3m4 0h3m2 0h3m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h1m2 0h1m2 0h2m2 0h2m5 0h1m2 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h4m1 0h1m1 0h6m2 0h2m1 0h1M0 8.5h1m3 0h1m1 0h3m4 0h1m1 0h1m2 0h1m2 0h3m1 0h9m2 0h1M2 9.5h2m1 0h1m1 0h1m1 0h1m2 0h2m2 0h1m2 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h5M0 10.5h1m1 0h1m1 0h4m1 0h1m1 0h1m1 0h1m2 0h2m2 0h3m1 0h1m1 0h1m4 0h1m1 0h1M1 11.5h1m1 0h3m2 0h1m1 0h2m5 0h1m3 0h2m1 0h1m2 0h2m1 0h3m1 0h2M0 12.5h1m1 0h1m1 0h3m3 0h2m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1m4 0h2m3 0h3M0 13.5h2m1 0h1m3 0h1m1 0h2m4 0h4m1 0h1m1 0h2m1 0h5m2 0h2M0 14.5h1m3 0h3m5 0h2m1 0h1m2 0h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h4M3 15.5h1m9 0h1m1 0h1m3 0h3m2 0h1m1 0h1m3 0h3m1 0h1M2 16.5h2m2 0h2m3 0h1m1 0h2m1 0h1m3 0h1m2 0h6m1 0h1m2 0h2M0 17.5h1m1 0h4m1 0h1m1 0h2m2 0h1m3 0h3m4 0h3m2 0h1m1 0h2m2 0h1M0 18.5h2m2 0h3m1 0h1m2 0h5m1 0h1m1 0h1m2 0h2m2 0h1m1 0h1m3 0h1m1 0h1M2 19.5h1m1 0h1m2 0h2m1 0h1m2 0h1m1 0h7m1 0h2m1 0h2m2 0h3m1 0h2M0 20.5h1m1 0h1m3 0h2m1 0h3m5 0h2m1 0h2m2 0h1m1 0h2m1 0h3m1 0h2M0 21.5h2m2 0h2m3 0h1m1 0h1m1 0h4m3 0h2m1 0h2m1 0h4m1 0h2M0 22.5h1m1 0h2m1 0h2m1 0h2m3 0h1m1 0h3m5 0h3m1 0h1m3 0h4M0 23.5h3m1 0h2m2 0h1m1 0h3m2 0h1m1 0h3m2 0h3m1 0h1m3 0h3m1 0h2M0 24.5h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h1m4 0h2m2 0h5m1 0h1m1 0h2m1 0h4M0 25.5h2m1 0h2m5 0h2m4 0h2m1 0h3m2 0h1m1 0h1m5 0h2M2 26.5h1m2 0h3m1 0h3m2 0h1m1 0h3m1 0h1m3 0h5m2 0h4M2 27.5h3m7 0h1m4 0h2m2 0h1m5 0h2m1 0h3m1 0h3M0 28.5h3m1 0h1m1 0h3m2 0h3m1 0h1m1 0h3m1 0h4m3 0h5m1 0h3M8 29.5h1m2 0h1m2 0h4m5 0h1m2 0h1m1 0h1m3 0h1m2 0h1M0 30.5h7m1 0h3m2 0h1m1 0h2m1 0h1m1 0h6m2 0h1m1 0h1m1 0h1M0 31.5h1m5 0h1m2 0h1m1 0h1m1 0h2m6 0h1m2 0h1m1 0h1m1 0h1m3 0h3m1 0h1M0 32.5h1m1 0h3m1 0h1m1 0h1m5 0h1m1 0h1m3 0h1m2 0h3m2 0h7m1 0h1M0 33.5h1m1 0h3m1 0h1m2 0h4m5 0h2m2 0h1m2 0h2m1 0h1m1 0h2m2 0h2M0 34.5h1m1 0h3m1 0h1m5 0h2m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m3 0h2m3 0h2M0 35.5h1m5 0h1m2 0h1m2 0h2m1 0h10m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2M0 36.5h7m1 0h1m2 0h2m1 0h1m2 0h2m1 0h5m6 0h1m2 0h3"/></svg></div>
+          <p><strong>Llévate la ruta en el móvil</strong>Escanea el código y se abre Google Maps con el camino al taller.</p>
+        </div></div>
+      </article>
     </div>
 
-    <form class="cita-form reveal" style="--d:2" id="citaForm" autocomplete="on">
-      <div class="form-head"><h3>Solicitud de cita</h3><span>Tarda 1 minuto</span></div>
-      <div class="form-grid">
-        <div class="field"><input id="f-nombre" name="nombre" type="text" placeholder=" " required autocomplete="name"><label for="f-nombre">Nombre</label></div>
-        <div class="field"><input id="f-tel" name="telefono" type="tel" placeholder=" " required autocomplete="tel" inputmode="tel" pattern="[0-9 +]{9,15}"><label for="f-tel">Teléfono</label></div>
-        <div class="field"><input id="f-coche" name="coche" type="text" placeholder=" "><label for="f-coche">Coche (marca y modelo)</label></div>
-        <div class="field">
-          <select id="f-serv" name="servicio">
-            <option>Revisión</option>
-            <option>Avería</option>
-            <option>Chapa y pintura</option>
-            <option>Neumáticos</option>
-            <option>Pre-ITV / ITV</option>
-            <option>Descarbonización</option>
-            <option>Otro</option>
-          </select>
-          <label for="f-serv">¿Qué necesitas?</label>
-        </div>
-        <div class="field full"><input id="f-dia" name="dia" type="date"><label for="f-dia">Día que te viene bien</label></div>
-        <div class="field full"><textarea id="f-msg" name="mensaje" placeholder=" "></textarea><label for="f-msg">Cuéntanos qué le pasa (opcional)</label></div>
-        <label class="check"><input type="checkbox" name="recogida"> Necesito que recojáis el coche</label>
-      </div>
-      <div class="form-foot">
-        <p class="form-note">Vista previa: este formulario todavía no envía datos.</p>
-        <button class="btn btn-dark" type="submit">Enviar solicitud
-          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-      </div>
-    </form>
+    <ul class="cita-points reveal">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Recogida del vehículo si lo necesitas</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Presupuesto de la reparación</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Garantía en cada arreglo</li>
+    </ul>
   </div>
 </section>
 </main>
@@ -1424,30 +1446,44 @@ button,input,select,textarea{font:inherit;color:inherit}
         for (const [a] of HORARIO[dd]) if (i > 0 || toMin(a) > mins) { next = { a, when: i === 0 ? 'hoy' : i === 1 ? 'mañana' : `el ${DIAS[dd]}` }; break outer; }
       }
     }
-    const st = $('#status');
-    st.hidden = false;
-    st.classList.toggle('closed', !open);
-    $('span', st).innerHTML = open
+    const html = open
       ? `<b>Abierto ahora</b> · cierra a las ${pretty(open)}`
       : `<b>Cerrado</b>${next ? ` · abre ${next.when} a las ${pretty(next.a)}` : ''}`;
+    ['#status', '#callStatus'].forEach(sel => {
+      const st = $(sel);
+      st.hidden = false;
+      st.classList.toggle('closed', !open);
+      $('span', st).innerHTML = html;
+    });
   }
   updateHours();
   setInterval(updateHours, 60000);
 
-  /* ---------- formulario (demo) ---------- */
-  const dia = $('#f-dia');
-  const today = new Date();
-  dia.min = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  /* ---------- copiar número / dirección ---------- */
   const toast = $('#toast');
   let toastT;
-  $('#citaForm').addEventListener('submit', e => {
-    e.preventDefault();
-    $('span', toast).textContent = 'Vista previa: en la versión final, esta solicitud llegaría directamente al taller.';
+  function showToast(msg) {
+    $('span', toast).textContent = msg;
     toast.classList.add('show');
     clearTimeout(toastT);
-    toastT = setTimeout(() => toast.classList.remove('show'), 5200);
-    e.target.reset();
-  });
+    toastT = setTimeout(() => toast.classList.remove('show'), 3200);
+  }
+  async function copyText(text) {
+    try { await navigator.clipboard.writeText(text); return true; } catch (_) {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+      document.body.appendChild(ta); ta.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (_) { /* sin portapapeles */ }
+      ta.remove();
+      return ok;
+    }
+  }
+  $$('[data-copy]').forEach(btn => btn.addEventListener('click', async () => {
+    const ok = await copyText(btn.dataset.copy);
+    showToast(ok ? `${btn.dataset.ok}: ${btn.dataset.copy}` : `No se ha podido copiar: ${btn.dataset.copy}`);
+  }));
 
   /* ---------- arranque ---------- */
   measureRoad();
